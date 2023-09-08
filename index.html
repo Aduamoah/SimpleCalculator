@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+        <!-- <h1>Currently Seated</h1> -->
+        <!-- <h2 id="beginner"></h2> -->
+      
+        <div id="improvised">
+            <input type="text" id="beginner" style="width: 100% ;height: 50px">
+            <div class="flex-container">
+       
+            <div class="row">
+                <div class="col"><button class="btn btn-warning" onclick="Clear()">C</button></div>
+                <div class="col"><button class="btn btn-primary" onclick="Addmore()">+1</button></div>
+                <div class="col"><button class="btn btn-danger" onclick="Submore()">-1</button></div>
+                <div class="col"><button class="btn btn-light" value="/" onclick="Taken('/')" onkeydown="myFunction(event)">/</button></div>
+
+        
+    </div>
+            </div>
+
+
+
+            <div class="flex-container">
+    <div class="row">
+        <div class="col"><button class="btn btn-dark" value="7" onclick="Taken('7')" onkeydown="myFunction(event)">7</button></div>
+
+        <div class="col"><button class="btn btn-dark" value="8" onclick="Taken('8')" onkeydown="myFunction(event)">8</button></div>
+        <div class="col"><button class="btn btn-dark" value="9" onclick="Taken('9')" onkeydown="myFunction(event)">9</button></div>
+        <div class="col"><button class="btn btn-light" value="*" onclick="Taken('*')" onkeydown="myFunction(event)">*</button></div>
+
+
+      
+    </div>
+            </div>
+
+
+
+
+            <div class="flex-container">
+    <div class="row">
+        <div class="col"><button class="btn btn-dark" value="4" onclick="Taken('4')" onkeydown="myFunction(event)">4</button></div>
+        <div class="col"><button class="btn btn-dark" value="5" onclick="Taken('5')" onkeydown="myFunction(event)">5</button></div>
+
+        <div class="col"><button class="btn btn-dark" value="6" onclick="Taken('6')" onkeydown="myFunction(event)">6</button></div>
+        <div class="col"><button class="btn btn-light" value="-" onclick="Taken('-')" onkeydown="myFunction(event)">-</button></div>
+
+    </div>
+    </div>
+
+
+    <div class="flex-container">
+    <div class="row">
+        <div class="col"><button class="btn btn-dark" value="1" onclick="Taken('1')" onkeydown="myFunction(event)">1</button></div>
+        <div class="col"><button class="btn btn-dark" value="2" onclick="Taken('2')" onkeydown="myFunction(event)">2</button></div>
+        <div class="col"><button class="btn btn-dark" value="3" onclick="Taken('3')" onkeydown="myFunction(event)">3</button></div>
+
+        <div class="col"><button class="btn btn-light" value="+" onclick="Taken('+')" onkeydown="myFunction(event)">+</button></div>
+        
+    </div>
+    </div>
+
+    <div class="flex-container">
+<div class="row">
+    <div class="col"><button class="btn btn-dark" value="0" onclick="Taken('0')" onkeydown="myFunction(event)">0</button></div>
+    <div class="col">  <button class="btn btn-light" value="." onclick="Taken('.')" >.</button></div>  
+    <div class="col"><button class="btn btn-light" value="%" onclick="Taken('%')" onkeydown="myFunction(event)">%</button></div>
+    <div class="col"><button class="btn btn-success" onclick="Answer()">=</button></div>
+
+ 
+          
+
+</div>
+    </div>
+</div>
+
+
+        
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.0.1/math.min.js"
+        integrity="sha512-B82WLflI1EQiR9sGbIV1ddGVvK4ghj1xjMShL7YvcOrHjX2qP72lHztT1DxBVPiz1aTR6mOUJbtwj06uadL2GA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+<script type="text/javascript">
+    function Addmore() {
+        var a = document.getElementById("beginner").value;
+        var count = parseInt(a) + 1;
+        document.getElementById("beginner").value = count;
+
+
+    }
+
+
+    function Submore() {
+        var a = document.getElementById("beginner").value;
+        var count = parseInt(a) - 1;
+        document.getElementById("beginner").value = count;
+
+
+    }
+
+    function Taken(digit) {
+        document.getElementById("beginner").value += digit;
+
+        //    document.getElementById("beginner").innerHTML = count;
+
+
+    }
+
+    function Clear() {
+        document.getElementById("beginner").value = "";
+    }
+
+
+
+
+    function myFunction(event) {
+        if (event.key == '0' || event.key == '1' ||
+            event.key == '2' || event.key == '3' ||
+            event.key == '4' || event.key == '5' ||
+            event.key == '6' || event.key == '7' ||
+            event.key == '8' || event.key == '9' ||
+            event.key == '+' || event.key == '-' ||
+            event.key == '*' || event.key == '/' ||
+            event.key == '%')
+            document.getElementById("beginner").value += event.key;
+    }
+
+    $(document).on('keypress', function (e) {
+        if (e.which == 13) {
+        var a = document.getElementById("beginner").value;
+        var y = math.evaluate(a);
+        document.getElementById("beginner").value = y;
+    
+           
+        }
+    });
+
+    function Answer() {
+        var a = document.getElementById("beginner").value;
+        var y = math.evaluate(a);
+        document.getElementById("beginner").value = y;
+    }
+
+   
+
+    // var code = (e.keyCode ? e.keyCode : e.which);
+    // if (code == 13) { //Enter keycode
+    //     Answer();
+    // }
+</script>
+
+</html>

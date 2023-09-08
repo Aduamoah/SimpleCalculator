@@ -1,0 +1,33 @@
+#improvised {
+    top: 50%; /* IMPORTANT */
+    left: 50%; /* IMPORTANT */
+    display: block;
+    position: absolute;
+    /* background: url(stand.png) no-repeat center center; */
+    width: 291px;
+    height: 480px;
+
+    margin-top: -240px; /* HALF OF THE HEIGHT */
+    margin-left: -145.5px; /* HALF OF THE WIDTH */
+    background-color: #080707;
+
+    border: 5px solid #080707;
+}
+
+.flex-container {
+    display: flex;
+   
+  }
+  
+  .flex-container > div {
+  
+    margin: 0px;
+    padding: 15px;
+    font-size: 30px;
+  }
+
+  #beginner{
+    font-size:30px;
+    font-weight: bold;
+    background-color:#F0F0F0;
+  }
